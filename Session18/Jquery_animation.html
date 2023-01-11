@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery hiệu ứng</title>
+</head>
+
+<body>
+    <button id="btn">Click here</button>
+    <p>Rikkei Academy chào các bạn</p>
+    <button id="btnToggle">Toggle</button><br>
+    <img src="image/hienho1.jpg" alt="Ca sĩ Hiền Hồ" width="300" height="300" /><br>
+    <button id="btnSlideUp">Slide Up</button>
+    <button id="btnSlideDown">Slide Down</button>
+    <button id="btnfadeout">Fade Out</button>
+    <button id="btnAnimate">Animate</button>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script>
+        $(window).on('load', function () {
+            $('#btn').on('click', function () {
+                $(this).hide(3000, showButton);
+            })
+            function showButton() {
+                $('#btn').show(3000);
+                $('#btn').css('color', 'red');
+            }
+            function addBtnCss() {
+                $('#btn').css('color', 'red');
+            }
+            $('#btnToggle').click(function () {
+                $('p').toggle();
+            })
+            $('#btnSlideUp').click(function () {
+                $('img').slideUp('slow');
+            })
+            $('#btnSlideDown').click(function () {
+                $('img').slideDown('slow');
+            })
+            $('#btnfadeout').click(function () {
+                $('img').fadeOut(5000);
+            })
+            $('#btnAnimate').click(function () {
+                $('img').animate({ width: 500, height: 500 }, 3000);
+            })
+
+        })
+
+    </script>
+</body>
+
+</html>

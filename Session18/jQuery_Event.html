@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự kiện chuột, bàn phím, trình duyệt, form</title>
+</head>
+
+<body>
+    <button id="btnRa">Rikkei Academy</button>
+    <form action="">
+        <input type="text" name="studentName" id="studentName" />
+    </form>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script>
+        $(window).on('load', function () {
+            //Xử lý sự kiện hover - di chuột vào button
+            $('#btnRa').hover(function () {
+                console.log("Bạn vừa di chuột vào button Rikkei Academy");
+            })
+            // Xử lý sự kiện mousemove - di chuột vào button
+            $('#btnRa').on('mousemove', function () {
+                console.log("Bạn vừa di chuột vào với sự kiện mousemove");
+            })
+            // Xử lý sự kiện mouseover - di chuột ra khỏi button
+            $('#btnRa').mouseover(function () {
+                console.log("Bạn vừa di chuột ra với sự kiện mouseover");
+            })
+            // Xử lý sự kiên keydown
+            $('#btnRa').keydown(function () {
+                console.log("Bạn vừa bấm phím xuống");
+            })
+            // Xử lý sự kiện browser
+            $(window).resize(function () {
+                console.log("Bạn vừa thay đổi kích thước của trình duyệt");
+            })
+            // Xử lý sự kiện change của input studentName
+            $('#studentName').on('change', function (event) {
+                event.preventDefault();
+                console.log("Dữ liệu trên input vừa thay đổi");
+            })
+        })
+    </script>
+</body>
+
+</html>

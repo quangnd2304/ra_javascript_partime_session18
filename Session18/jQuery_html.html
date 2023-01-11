@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JQuery HTML</title>
+</head>
+
+<body>
+    <div id="zone01">
+        <p>Chúng ta đang học Jquery</p>
+    </div>
+    <form action="">
+        <input type="text" name="studentId" id="studentId" value="SV001" />
+    </form>
+    <p style="color: red;" class="ra">Rikkei Academy đào tạo java và javascript</p>
+    <p id="zone02">Sắp sang năm mới rồi</p>
+    <button id="toggleClass">Toggle Class</button>
+    <p class="zone02">Chúc mừng năm mới</p>
+    <style>
+        .zone02 {
+            color: red;
+            background-color: black;
+        }
+    </style>
+
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script>
+        $(window).on('load', function () {
+            let content = $('#zone01').text();
+            console.log("Nội dung thẻ p là:", content);
+            $('#zone01').text('Lớp javascript parttime đang học JQuery');
+            let phtml = $('#zone01').html();
+            console.log(phtml);
+            // Thêm phần tử html vào thẻ div
+            $('#zone01').html("<h2>Lớp rất vui</h2>");
+            // Lấy giá trị ô input studentId
+            console.log($('#studentId').val());
+            //Gán lại giá trị ô input
+            $('#studentId').val("SV002");
+            // Lấy thuộc tính style của p
+            console.log($('.ra').attr('style'));
+            // set thuộc tính class của p
+            $('.ra').addClass('ra_container');
+            console.log($('.ra').attr('class'));
+            //Ẩn hiện class
+            $('#toggleClass').on('click', function () {
+                $('#zone02').toggleClass('zone02');
+            })
+            //Thay đổi kích thước phần tử có class =zone02
+            $('.zone02').click(function () {
+                $(this).width(200);
+            })
+
+        })
+    </script>
+</body>
+
+</html>

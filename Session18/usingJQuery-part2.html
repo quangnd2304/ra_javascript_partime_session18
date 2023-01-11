@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cài đặt và sử dụng Jquery - CDN</title>
+</head>
+
+<body>
+    <p>Rikkei Academy - Hệ thống đào tạo CNTT chất lượng Nhật Bản</p>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script>
+        $(window).on('load', function () {
+            $('p').on('click', function () {
+                $(this).css({ "color": "red", "background-color": "black" });
+            })
+        })
+    </script>
+</body>
+
+</html>
